@@ -5,4 +5,6 @@ const foodRouter = express.Router();
 
 foodRouter.get("/", foodContoller.findAll);
 
+foodRouter.post("/", foodContoller.create);
+
 export default foodRouter;

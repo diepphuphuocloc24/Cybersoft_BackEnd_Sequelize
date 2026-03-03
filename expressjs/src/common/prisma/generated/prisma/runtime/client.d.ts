@@ -85,8 +85,8 @@ export declare type AllModelsToStringIndex<TypeMap extends TypeMapDef, Args exte
         $allModels: infer AllModels;
     };
 } ? {
-    [P in K]: Record<TypeMap['meta']['modelProps'], AllModels>;
-} : {};
+        [P in K]: Record<TypeMap['meta']['modelProps'], AllModels>;
+    } : {};
 
 export { AnyNull }
 
@@ -1157,7 +1157,7 @@ export declare type GetPayloadResultExtensionObject<R extends InternalArgs['resu
 };
 
 export declare function getPrismaClient(config: GetPrismaClientConfig): {
-    new (optionsArg: PrismaClientOptions): {
+    new(optionsArg: PrismaClientOptions): {
         _originalClient: any;
         _runtimeDataModel: RuntimeDataModel;
         _requestHandler: RequestHandler;
@@ -2200,7 +2200,7 @@ declare type QueryCompiler = {
 };
 
 declare interface QueryCompilerConstructor {
-    new (options: QueryCompilerOptions): QueryCompiler;
+    new(options: QueryCompilerOptions): QueryCompiler;
 }
 
 declare type QueryCompilerOptions = {
