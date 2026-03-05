@@ -138,7 +138,8 @@ exports.Prisma.Like_resScalarFieldEnum = {
   id: 'id',
   user_id: 'user_id',
   res_id: 'res_id',
-  date_rate: 'date_rate'
+  create_at: 'create_at',
+  isLike: 'isLike'
 };
 
 exports.Prisma.OrderScalarFieldEnum = {
@@ -154,8 +155,8 @@ exports.Prisma.Rate_resScalarFieldEnum = {
   id: 'id',
   user_id: 'user_id',
   res_id: 'res_id',
-  amount: 'amount',
-  date_rate: 'date_rate'
+  create_at: 'create_at',
+  isRated: 'isRated'
 };
 
 exports.Prisma.RestaurantScalarFieldEnum = {

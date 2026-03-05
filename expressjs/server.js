@@ -3,6 +3,8 @@ import rootRouter from "./src/routers/root.router.js";
 
 const app = express();
 
+app.use(express.json());
+
 app.get("/", (request, response) => {
   response.json("Server đang chạy thành công trên cổng 3098");
 });

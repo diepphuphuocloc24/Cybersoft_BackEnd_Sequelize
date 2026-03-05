@@ -1,6 +1,7 @@
 generator client {
-  provider = "prisma-client-js"
-  output   = "../src/common/prisma/generated/prisma"
+  provider     = "prisma-client-js"
+  output       = "../src/common/prisma/generated/prisma"
+  moduleFormat = "cjs"
 }
 
 datasource db {
@@ -31,7 +32,8 @@ model like_res {
   id         Int         @id @default(autoincrement())
   user_id    Int?
   res_id     Int?
-  date_rate  DateTime?   @db.DateTime(0)
+  create_at  DateTime?   @default(now()) @db.DateTime(0)
+  isLike     Boolean?    @default(true)
   user       user?       @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction, map: "like_res_ibfk_1")
   restaurant restaurant? @relation(fields: [res_id], references: [res_id], onDelete: NoAction, onUpdate: NoAction, map: "like_res_ibfk_2")
 
@@ -57,8 +59,8 @@ model rate_res {
   id         Int         @id @default(autoincrement())
   user_id    Int?
   res_id     Int?
-  amount     Int?
-  date_rate  DateTime?   @db.DateTime(0)
+  create_at  DateTime?   @default(now()) @db.DateTime(0)
+  isRated    Boolean?    @default(true)
   user       user?       @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction, map: "rate_res_ibfk_1")
   restaurant restaurant? @relation(fields: [res_id], references: [res_id], onDelete: NoAction, onUpdate: NoAction, map: "rate_res_ibfk_2")
 

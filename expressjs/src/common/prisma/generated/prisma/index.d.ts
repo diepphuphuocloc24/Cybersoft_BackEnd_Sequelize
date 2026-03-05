@@ -3641,21 +3641,24 @@ export namespace Prisma {
     id: number | null
     user_id: number | null
     res_id: number | null
-    date_rate: Date | null
+    create_at: Date | null
+    isLike: boolean | null
   }
 
   export type Like_resMaxAggregateOutputType = {
     id: number | null
     user_id: number | null
     res_id: number | null
-    date_rate: Date | null
+    create_at: Date | null
+    isLike: boolean | null
   }
 
   export type Like_resCountAggregateOutputType = {
     id: number
     user_id: number
     res_id: number
-    date_rate: number
+    create_at: number
+    isLike: number
     _all: number
   }
 
@@ -3676,21 +3679,24 @@ export namespace Prisma {
     id?: true
     user_id?: true
     res_id?: true
-    date_rate?: true
+    create_at?: true
+    isLike?: true
   }
 
   export type Like_resMaxAggregateInputType = {
     id?: true
     user_id?: true
     res_id?: true
-    date_rate?: true
+    create_at?: true
+    isLike?: true
   }
 
   export type Like_resCountAggregateInputType = {
     id?: true
     user_id?: true
     res_id?: true
-    date_rate?: true
+    create_at?: true
+    isLike?: true
     _all?: true
   }
 
@@ -3784,7 +3790,8 @@ export namespace Prisma {
     id: number
     user_id: number | null
     res_id: number | null
-    date_rate: Date | null
+    create_at: Date | null
+    isLike: boolean | null
     _count: Like_resCountAggregateOutputType | null
     _avg: Like_resAvgAggregateOutputType | null
     _sum: Like_resSumAggregateOutputType | null
@@ -3810,7 +3817,8 @@ export namespace Prisma {
     id?: boolean
     user_id?: boolean
     res_id?: boolean
-    date_rate?: boolean
+    create_at?: boolean
+    isLike?: boolean
     user?: boolean | like_res$userArgs<ExtArgs>
     restaurant?: boolean | like_res$restaurantArgs<ExtArgs>
   }, ExtArgs["result"]["like_res"]>
@@ -3821,10 +3829,11 @@ export namespace Prisma {
     id?: boolean
     user_id?: boolean
     res_id?: boolean
-    date_rate?: boolean
+    create_at?: boolean
+    isLike?: boolean
   }
 
-  export type like_resOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "user_id" | "res_id" | "date_rate", ExtArgs["result"]["like_res"]>
+  export type like_resOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "user_id" | "res_id" | "create_at" | "isLike", ExtArgs["result"]["like_res"]>
   export type like_resInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | like_res$userArgs<ExtArgs>
     restaurant?: boolean | like_res$restaurantArgs<ExtArgs>
@@ -3840,7 +3849,8 @@ export namespace Prisma {
       id: number
       user_id: number | null
       res_id: number | null
-      date_rate: Date | null
+      create_at: Date | null
+      isLike: boolean | null
     }, ExtArgs["result"]["like_res"]>
     composites: {}
   }
@@ -4215,7 +4225,8 @@ export namespace Prisma {
     readonly id: FieldRef<"like_res", 'Int'>
     readonly user_id: FieldRef<"like_res", 'Int'>
     readonly res_id: FieldRef<"like_res", 'Int'>
-    readonly date_rate: FieldRef<"like_res", 'DateTime'>
+    readonly create_at: FieldRef<"like_res", 'DateTime'>
+    readonly isLike: FieldRef<"like_res", 'Boolean'>
   }
     
 
@@ -5659,38 +5670,36 @@ export namespace Prisma {
     id: number | null
     user_id: number | null
     res_id: number | null
-    amount: number | null
   }
 
   export type Rate_resSumAggregateOutputType = {
     id: number | null
     user_id: number | null
     res_id: number | null
-    amount: number | null
   }
 
   export type Rate_resMinAggregateOutputType = {
     id: number | null
     user_id: number | null
     res_id: number | null
-    amount: number | null
-    date_rate: Date | null
+    create_at: Date | null
+    isRated: boolean | null
   }
 
   export type Rate_resMaxAggregateOutputType = {
     id: number | null
     user_id: number | null
     res_id: number | null
-    amount: number | null
-    date_rate: Date | null
+    create_at: Date | null
+    isRated: boolean | null
   }
 
   export type Rate_resCountAggregateOutputType = {
     id: number
     user_id: number
     res_id: number
-    amount: number
-    date_rate: number
+    create_at: number
+    isRated: number
     _all: number
   }
 
@@ -5699,38 +5708,36 @@ export namespace Prisma {
     id?: true
     user_id?: true
     res_id?: true
-    amount?: true
   }
 
   export type Rate_resSumAggregateInputType = {
     id?: true
     user_id?: true
     res_id?: true
-    amount?: true
   }
 
   export type Rate_resMinAggregateInputType = {
     id?: true
     user_id?: true
     res_id?: true
-    amount?: true
-    date_rate?: true
+    create_at?: true
+    isRated?: true
   }
 
   export type Rate_resMaxAggregateInputType = {
     id?: true
     user_id?: true
     res_id?: true
-    amount?: true
-    date_rate?: true
+    create_at?: true
+    isRated?: true
   }
 
   export type Rate_resCountAggregateInputType = {
     id?: true
     user_id?: true
     res_id?: true
-    amount?: true
-    date_rate?: true
+    create_at?: true
+    isRated?: true
     _all?: true
   }
 
@@ -5824,8 +5831,8 @@ export namespace Prisma {
     id: number
     user_id: number | null
     res_id: number | null
-    amount: number | null
-    date_rate: Date | null
+    create_at: Date | null
+    isRated: boolean | null
     _count: Rate_resCountAggregateOutputType | null
     _avg: Rate_resAvgAggregateOutputType | null
     _sum: Rate_resSumAggregateOutputType | null
@@ -5851,8 +5858,8 @@ export namespace Prisma {
     id?: boolean
     user_id?: boolean
     res_id?: boolean
-    amount?: boolean
-    date_rate?: boolean
+    create_at?: boolean
+    isRated?: boolean
     user?: boolean | rate_res$userArgs<ExtArgs>
     restaurant?: boolean | rate_res$restaurantArgs<ExtArgs>
   }, ExtArgs["result"]["rate_res"]>
@@ -5863,11 +5870,11 @@ export namespace Prisma {
     id?: boolean
     user_id?: boolean
     res_id?: boolean
-    amount?: boolean
-    date_rate?: boolean
+    create_at?: boolean
+    isRated?: boolean
   }
 
-  export type rate_resOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "user_id" | "res_id" | "amount" | "date_rate", ExtArgs["result"]["rate_res"]>
+  export type rate_resOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "user_id" | "res_id" | "create_at" | "isRated", ExtArgs["result"]["rate_res"]>
   export type rate_resInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | rate_res$userArgs<ExtArgs>
     restaurant?: boolean | rate_res$restaurantArgs<ExtArgs>
@@ -5883,8 +5890,8 @@ export namespace Prisma {
       id: number
       user_id: number | null
       res_id: number | null
-      amount: number | null
-      date_rate: Date | null
+      create_at: Date | null
+      isRated: boolean | null
     }, ExtArgs["result"]["rate_res"]>
     composites: {}
   }
@@ -6259,8 +6266,8 @@ export namespace Prisma {
     readonly id: FieldRef<"rate_res", 'Int'>
     readonly user_id: FieldRef<"rate_res", 'Int'>
     readonly res_id: FieldRef<"rate_res", 'Int'>
-    readonly amount: FieldRef<"rate_res", 'Int'>
-    readonly date_rate: FieldRef<"rate_res", 'DateTime'>
+    readonly create_at: FieldRef<"rate_res", 'DateTime'>
+    readonly isRated: FieldRef<"rate_res", 'Boolean'>
   }
     
 
@@ -9717,7 +9724,8 @@ export namespace Prisma {
     id: 'id',
     user_id: 'user_id',
     res_id: 'res_id',
-    date_rate: 'date_rate'
+    create_at: 'create_at',
+    isLike: 'isLike'
   };
 
   export type Like_resScalarFieldEnum = (typeof Like_resScalarFieldEnum)[keyof typeof Like_resScalarFieldEnum]
@@ -9739,8 +9747,8 @@ export namespace Prisma {
     id: 'id',
     user_id: 'user_id',
     res_id: 'res_id',
-    amount: 'amount',
-    date_rate: 'date_rate'
+    create_at: 'create_at',
+    isRated: 'isRated'
   };
 
   export type Rate_resScalarFieldEnum = (typeof Rate_resScalarFieldEnum)[keyof typeof Rate_resScalarFieldEnum]
@@ -9872,6 +9880,13 @@ export namespace Prisma {
    */
   export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
     
+
+
+  /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
   /**
    * Deep Input Types
    */
@@ -9996,7 +10011,8 @@ export namespace Prisma {
     id?: IntFilter<"like_res"> | number
     user_id?: IntNullableFilter<"like_res"> | number | null
     res_id?: IntNullableFilter<"like_res"> | number | null
-    date_rate?: DateTimeNullableFilter<"like_res"> | Date | string | null
+    create_at?: DateTimeNullableFilter<"like_res"> | Date | string | null
+    isLike?: BoolNullableFilter<"like_res"> | boolean | null
     user?: XOR<UserNullableScalarRelationFilter, userWhereInput> | null
     restaurant?: XOR<RestaurantNullableScalarRelationFilter, restaurantWhereInput> | null
   }
@@ -10005,7 +10021,8 @@ export namespace Prisma {
     id?: SortOrder
     user_id?: SortOrderInput | SortOrder
     res_id?: SortOrderInput | SortOrder
-    date_rate?: SortOrderInput | SortOrder
+    create_at?: SortOrderInput | SortOrder
+    isLike?: SortOrderInput | SortOrder
     user?: userOrderByWithRelationInput
     restaurant?: restaurantOrderByWithRelationInput
   }
@@ -10017,7 +10034,8 @@ export namespace Prisma {
     NOT?: like_resWhereInput | like_resWhereInput[]
     user_id?: IntNullableFilter<"like_res"> | number | null
     res_id?: IntNullableFilter<"like_res"> | number | null
-    date_rate?: DateTimeNullableFilter<"like_res"> | Date | string | null
+    create_at?: DateTimeNullableFilter<"like_res"> | Date | string | null
+    isLike?: BoolNullableFilter<"like_res"> | boolean | null
     user?: XOR<UserNullableScalarRelationFilter, userWhereInput> | null
     restaurant?: XOR<RestaurantNullableScalarRelationFilter, restaurantWhereInput> | null
   }, "id">
@@ -10026,7 +10044,8 @@ export namespace Prisma {
     id?: SortOrder
     user_id?: SortOrderInput | SortOrder
     res_id?: SortOrderInput | SortOrder
-    date_rate?: SortOrderInput | SortOrder
+    create_at?: SortOrderInput | SortOrder
+    isLike?: SortOrderInput | SortOrder
     _count?: like_resCountOrderByAggregateInput
     _avg?: like_resAvgOrderByAggregateInput
     _max?: like_resMaxOrderByAggregateInput
@@ -10041,7 +10060,8 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"like_res"> | number
     user_id?: IntNullableWithAggregatesFilter<"like_res"> | number | null
     res_id?: IntNullableWithAggregatesFilter<"like_res"> | number | null
-    date_rate?: DateTimeNullableWithAggregatesFilter<"like_res"> | Date | string | null
+    create_at?: DateTimeNullableWithAggregatesFilter<"like_res"> | Date | string | null
+    isLike?: BoolNullableWithAggregatesFilter<"like_res"> | boolean | null
   }
 
   export type orderWhereInput = {
@@ -10117,8 +10137,8 @@ export namespace Prisma {
     id?: IntFilter<"rate_res"> | number
     user_id?: IntNullableFilter<"rate_res"> | number | null
     res_id?: IntNullableFilter<"rate_res"> | number | null
-    amount?: IntNullableFilter<"rate_res"> | number | null
-    date_rate?: DateTimeNullableFilter<"rate_res"> | Date | string | null
+    create_at?: DateTimeNullableFilter<"rate_res"> | Date | string | null
+    isRated?: BoolNullableFilter<"rate_res"> | boolean | null
     user?: XOR<UserNullableScalarRelationFilter, userWhereInput> | null
     restaurant?: XOR<RestaurantNullableScalarRelationFilter, restaurantWhereInput> | null
   }
@@ -10127,8 +10147,8 @@ export namespace Prisma {
     id?: SortOrder
     user_id?: SortOrderInput | SortOrder
     res_id?: SortOrderInput | SortOrder
-    amount?: SortOrderInput | SortOrder
-    date_rate?: SortOrderInput | SortOrder
+    create_at?: SortOrderInput | SortOrder
+    isRated?: SortOrderInput | SortOrder
     user?: userOrderByWithRelationInput
     restaurant?: restaurantOrderByWithRelationInput
   }
@@ -10140,8 +10160,8 @@ export namespace Prisma {
     NOT?: rate_resWhereInput | rate_resWhereInput[]
     user_id?: IntNullableFilter<"rate_res"> | number | null
     res_id?: IntNullableFilter<"rate_res"> | number | null
-    amount?: IntNullableFilter<"rate_res"> | number | null
-    date_rate?: DateTimeNullableFilter<"rate_res"> | Date | string | null
+    create_at?: DateTimeNullableFilter<"rate_res"> | Date | string | null
+    isRated?: BoolNullableFilter<"rate_res"> | boolean | null
     user?: XOR<UserNullableScalarRelationFilter, userWhereInput> | null
     restaurant?: XOR<RestaurantNullableScalarRelationFilter, restaurantWhereInput> | null
   }, "id">
@@ -10150,8 +10170,8 @@ export namespace Prisma {
     id?: SortOrder
     user_id?: SortOrderInput | SortOrder
     res_id?: SortOrderInput | SortOrder
-    amount?: SortOrderInput | SortOrder
-    date_rate?: SortOrderInput | SortOrder
+    create_at?: SortOrderInput | SortOrder
+    isRated?: SortOrderInput | SortOrder
     _count?: rate_resCountOrderByAggregateInput
     _avg?: rate_resAvgOrderByAggregateInput
     _max?: rate_resMaxOrderByAggregateInput
@@ -10166,8 +10186,8 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"rate_res"> | number
     user_id?: IntNullableWithAggregatesFilter<"rate_res"> | number | null
     res_id?: IntNullableWithAggregatesFilter<"rate_res"> | number | null
-    amount?: IntNullableWithAggregatesFilter<"rate_res"> | number | null
-    date_rate?: DateTimeNullableWithAggregatesFilter<"rate_res"> | Date | string | null
+    create_at?: DateTimeNullableWithAggregatesFilter<"rate_res"> | Date | string | null
+    isRated?: BoolNullableWithAggregatesFilter<"rate_res"> | boolean | null
   }
 
   export type restaurantWhereInput = {
@@ -10442,7 +10462,8 @@ export namespace Prisma {
   }
 
   export type like_resCreateInput = {
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isLike?: boolean | null
     user?: userCreateNestedOneWithoutLike_resInput
     restaurant?: restaurantCreateNestedOneWithoutLike_resInput
   }
@@ -10451,11 +10472,13 @@ export namespace Prisma {
     id?: number
     user_id?: number | null
     res_id?: number | null
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isLike?: boolean | null
   }
 
   export type like_resUpdateInput = {
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLike?: NullableBoolFieldUpdateOperationsInput | boolean | null
     user?: userUpdateOneWithoutLike_resNestedInput
     restaurant?: restaurantUpdateOneWithoutLike_resNestedInput
   }
@@ -10464,25 +10487,29 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: NullableIntFieldUpdateOperationsInput | number | null
     res_id?: NullableIntFieldUpdateOperationsInput | number | null
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLike?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type like_resCreateManyInput = {
     id?: number
     user_id?: number | null
     res_id?: number | null
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isLike?: boolean | null
   }
 
   export type like_resUpdateManyMutationInput = {
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLike?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type like_resUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: NullableIntFieldUpdateOperationsInput | number | null
     res_id?: NullableIntFieldUpdateOperationsInput | number | null
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLike?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type orderCreateInput = {
@@ -10544,8 +10571,8 @@ export namespace Prisma {
   }
 
   export type rate_resCreateInput = {
-    amount?: number | null
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isRated?: boolean | null
     user?: userCreateNestedOneWithoutRate_resInput
     restaurant?: restaurantCreateNestedOneWithoutRate_resInput
   }
@@ -10554,13 +10581,13 @@ export namespace Prisma {
     id?: number
     user_id?: number | null
     res_id?: number | null
-    amount?: number | null
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isRated?: boolean | null
   }
 
   export type rate_resUpdateInput = {
-    amount?: NullableIntFieldUpdateOperationsInput | number | null
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isRated?: NullableBoolFieldUpdateOperationsInput | boolean | null
     user?: userUpdateOneWithoutRate_resNestedInput
     restaurant?: restaurantUpdateOneWithoutRate_resNestedInput
   }
@@ -10569,29 +10596,29 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: NullableIntFieldUpdateOperationsInput | number | null
     res_id?: NullableIntFieldUpdateOperationsInput | number | null
-    amount?: NullableIntFieldUpdateOperationsInput | number | null
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isRated?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type rate_resCreateManyInput = {
     id?: number
     user_id?: number | null
     res_id?: number | null
-    amount?: number | null
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isRated?: boolean | null
   }
 
   export type rate_resUpdateManyMutationInput = {
-    amount?: NullableIntFieldUpdateOperationsInput | number | null
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isRated?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type rate_resUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: NullableIntFieldUpdateOperationsInput | number | null
     res_id?: NullableIntFieldUpdateOperationsInput | number | null
-    amount?: NullableIntFieldUpdateOperationsInput | number | null
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isRated?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type restaurantCreateInput = {
@@ -10990,6 +11017,11 @@ export namespace Prisma {
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
+  export type BoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
   export type UserNullableScalarRelationFilter = {
     is?: userWhereInput | null
     isNot?: userWhereInput | null
@@ -11004,7 +11036,8 @@ export namespace Prisma {
     id?: SortOrder
     user_id?: SortOrder
     res_id?: SortOrder
-    date_rate?: SortOrder
+    create_at?: SortOrder
+    isLike?: SortOrder
   }
 
   export type like_resAvgOrderByAggregateInput = {
@@ -11017,14 +11050,16 @@ export namespace Prisma {
     id?: SortOrder
     user_id?: SortOrder
     res_id?: SortOrder
-    date_rate?: SortOrder
+    create_at?: SortOrder
+    isLike?: SortOrder
   }
 
   export type like_resMinOrderByAggregateInput = {
     id?: SortOrder
     user_id?: SortOrder
     res_id?: SortOrder
-    date_rate?: SortOrder
+    create_at?: SortOrder
+    isLike?: SortOrder
   }
 
   export type like_resSumOrderByAggregateInput = {
@@ -11045,6 +11080,14 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedDateTimeNullableFilter<$PrismaModel>
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
   export type FoodNullableScalarRelationFilter = {
@@ -11103,38 +11146,36 @@ export namespace Prisma {
     id?: SortOrder
     user_id?: SortOrder
     res_id?: SortOrder
-    amount?: SortOrder
-    date_rate?: SortOrder
+    create_at?: SortOrder
+    isRated?: SortOrder
   }
 
   export type rate_resAvgOrderByAggregateInput = {
     id?: SortOrder
     user_id?: SortOrder
     res_id?: SortOrder
-    amount?: SortOrder
   }
 
   export type rate_resMaxOrderByAggregateInput = {
     id?: SortOrder
     user_id?: SortOrder
     res_id?: SortOrder
-    amount?: SortOrder
-    date_rate?: SortOrder
+    create_at?: SortOrder
+    isRated?: SortOrder
   }
 
   export type rate_resMinOrderByAggregateInput = {
     id?: SortOrder
     user_id?: SortOrder
     res_id?: SortOrder
-    amount?: SortOrder
-    date_rate?: SortOrder
+    create_at?: SortOrder
+    isRated?: SortOrder
   }
 
   export type rate_resSumOrderByAggregateInput = {
     id?: SortOrder
     user_id?: SortOrder
     res_id?: SortOrder
-    amount?: SortOrder
   }
 
   export type Like_resListRelationFilter = {
@@ -11450,6 +11491,10 @@ export namespace Prisma {
 
   export type NullableDateTimeFieldUpdateOperationsInput = {
     set?: Date | string | null
+  }
+
+  export type NullableBoolFieldUpdateOperationsInput = {
+    set?: boolean | null
   }
 
   export type userUpdateOneWithoutLike_resNestedInput = {
@@ -11898,6 +11943,11 @@ export namespace Prisma {
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
+  export type NestedBoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
   export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
     in?: Date[] | string[] | null
@@ -11910,6 +11960,14 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedDateTimeNullableFilter<$PrismaModel>
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
   export type food_typeCreateWithoutFoodInput = {
@@ -12400,14 +12458,16 @@ export namespace Prisma {
   }
 
   export type like_resCreateWithoutRestaurantInput = {
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isLike?: boolean | null
     user?: userCreateNestedOneWithoutLike_resInput
   }
 
   export type like_resUncheckedCreateWithoutRestaurantInput = {
     id?: number
     user_id?: number | null
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isLike?: boolean | null
   }
 
   export type like_resCreateOrConnectWithoutRestaurantInput = {
@@ -12421,16 +12481,16 @@ export namespace Prisma {
   }
 
   export type rate_resCreateWithoutRestaurantInput = {
-    amount?: number | null
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isRated?: boolean | null
     user?: userCreateNestedOneWithoutRate_resInput
   }
 
   export type rate_resUncheckedCreateWithoutRestaurantInput = {
     id?: number
     user_id?: number | null
-    amount?: number | null
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isRated?: boolean | null
   }
 
   export type rate_resCreateOrConnectWithoutRestaurantInput = {
@@ -12466,7 +12526,8 @@ export namespace Prisma {
     id?: IntFilter<"like_res"> | number
     user_id?: IntNullableFilter<"like_res"> | number | null
     res_id?: IntNullableFilter<"like_res"> | number | null
-    date_rate?: DateTimeNullableFilter<"like_res"> | Date | string | null
+    create_at?: DateTimeNullableFilter<"like_res"> | Date | string | null
+    isLike?: BoolNullableFilter<"like_res"> | boolean | null
   }
 
   export type rate_resUpsertWithWhereUniqueWithoutRestaurantInput = {
@@ -12492,8 +12553,8 @@ export namespace Prisma {
     id?: IntFilter<"rate_res"> | number
     user_id?: IntNullableFilter<"rate_res"> | number | null
     res_id?: IntNullableFilter<"rate_res"> | number | null
-    amount?: IntNullableFilter<"rate_res"> | number | null
-    date_rate?: DateTimeNullableFilter<"rate_res"> | Date | string | null
+    create_at?: DateTimeNullableFilter<"rate_res"> | Date | string | null
+    isRated?: BoolNullableFilter<"rate_res"> | boolean | null
   }
 
   export type foodCreateWithoutSub_foodInput = {
@@ -12551,14 +12612,16 @@ export namespace Prisma {
   }
 
   export type like_resCreateWithoutUserInput = {
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isLike?: boolean | null
     restaurant?: restaurantCreateNestedOneWithoutLike_resInput
   }
 
   export type like_resUncheckedCreateWithoutUserInput = {
     id?: number
     res_id?: number | null
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isLike?: boolean | null
   }
 
   export type like_resCreateOrConnectWithoutUserInput = {
@@ -12597,16 +12660,16 @@ export namespace Prisma {
   }
 
   export type rate_resCreateWithoutUserInput = {
-    amount?: number | null
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isRated?: boolean | null
     restaurant?: restaurantCreateNestedOneWithoutRate_resInput
   }
 
   export type rate_resUncheckedCreateWithoutUserInput = {
     id?: number
     res_id?: number | null
-    amount?: number | null
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isRated?: boolean | null
   }
 
   export type rate_resCreateOrConnectWithoutUserInput = {
@@ -12759,57 +12822,62 @@ export namespace Prisma {
   export type like_resCreateManyRestaurantInput = {
     id?: number
     user_id?: number | null
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isLike?: boolean | null
   }
 
   export type rate_resCreateManyRestaurantInput = {
     id?: number
     user_id?: number | null
-    amount?: number | null
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isRated?: boolean | null
   }
 
   export type like_resUpdateWithoutRestaurantInput = {
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLike?: NullableBoolFieldUpdateOperationsInput | boolean | null
     user?: userUpdateOneWithoutLike_resNestedInput
   }
 
   export type like_resUncheckedUpdateWithoutRestaurantInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLike?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type like_resUncheckedUpdateManyWithoutRestaurantInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLike?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type rate_resUpdateWithoutRestaurantInput = {
-    amount?: NullableIntFieldUpdateOperationsInput | number | null
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isRated?: NullableBoolFieldUpdateOperationsInput | boolean | null
     user?: userUpdateOneWithoutRate_resNestedInput
   }
 
   export type rate_resUncheckedUpdateWithoutRestaurantInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    amount?: NullableIntFieldUpdateOperationsInput | number | null
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isRated?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type rate_resUncheckedUpdateManyWithoutRestaurantInput = {
     id?: IntFieldUpdateOperationsInput | number
     user_id?: NullableIntFieldUpdateOperationsInput | number | null
-    amount?: NullableIntFieldUpdateOperationsInput | number | null
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isRated?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type like_resCreateManyUserInput = {
     id?: number
     res_id?: number | null
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isLike?: boolean | null
   }
 
   export type orderCreateManyUserInput = {
@@ -12823,25 +12891,28 @@ export namespace Prisma {
   export type rate_resCreateManyUserInput = {
     id?: number
     res_id?: number | null
-    amount?: number | null
-    date_rate?: Date | string | null
+    create_at?: Date | string | null
+    isRated?: boolean | null
   }
 
   export type like_resUpdateWithoutUserInput = {
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLike?: NullableBoolFieldUpdateOperationsInput | boolean | null
     restaurant?: restaurantUpdateOneWithoutLike_resNestedInput
   }
 
   export type like_resUncheckedUpdateWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     res_id?: NullableIntFieldUpdateOperationsInput | number | null
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLike?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type like_resUncheckedUpdateManyWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     res_id?: NullableIntFieldUpdateOperationsInput | number | null
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isLike?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type orderUpdateWithoutUserInput = {
@@ -12868,23 +12939,23 @@ export namespace Prisma {
   }
 
   export type rate_resUpdateWithoutUserInput = {
-    amount?: NullableIntFieldUpdateOperationsInput | number | null
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isRated?: NullableBoolFieldUpdateOperationsInput | boolean | null
     restaurant?: restaurantUpdateOneWithoutRate_resNestedInput
   }
 
   export type rate_resUncheckedUpdateWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     res_id?: NullableIntFieldUpdateOperationsInput | number | null
-    amount?: NullableIntFieldUpdateOperationsInput | number | null
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isRated?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type rate_resUncheckedUpdateManyWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     res_id?: NullableIntFieldUpdateOperationsInput | number | null
-    amount?: NullableIntFieldUpdateOperationsInput | number | null
-    date_rate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    create_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    isRated?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
 
