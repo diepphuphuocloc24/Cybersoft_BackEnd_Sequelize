@@ -8,7 +8,20 @@ export const rateResController = {
 
       res.status(statusCodes.CREATED).json({
         statusCode: statusCodes.CREATED,
-        message: "Rate food thành công",
+        content: result,
+        dateTime: new Date(),
+      });
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  async findAll(req, res, next) {
+    try {
+      const result = await rateResService.findAll(req);
+
+      res.status(statusCodes.OK).json({
+        statusCode: statusCodes.OK,
         content: result,
         dateTime: new Date(),
       });
