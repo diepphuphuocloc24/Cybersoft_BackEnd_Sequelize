@@ -35,7 +35,21 @@ const likeResService = {
   },
 
   async findAll(req) {
-    const likes = await prisma.like_res.findMany();
+    const { user_id, res_id } = req.query;
+
+    const where = {};
+
+    if (user_id) {
+      where.user_id = Number(user_id);
+    }
+
+    if (res_id) {
+      where.res_id = Number(res_id);
+    }
+
+    const likes = await prisma.like_res.findMany({
+      where,
+    });
 
     return likes;
   },

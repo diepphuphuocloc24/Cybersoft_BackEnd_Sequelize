@@ -34,7 +34,21 @@ export const rateResService = {
   },
 
   async findAll(req) {
-    const rates = await prisma.rate_res.findMany();
+    const { user_id, res_id } = req.query;
+
+    const where = {};
+
+    if (user_id) {
+      where.user_id = Number(user_id);
+    }
+
+    if (res_id) {
+      where.res_id = Number(res_id);
+    }
+
+    const rates = await prisma.rate_res.findMany({
+      where,
+    });
 
     return rates;
   },
